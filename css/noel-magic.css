@@ -1,0 +1,343 @@
+/* Thème de Noël */
+.noel-theme {
+    background: linear-gradient(to bottom, #0a1f3b, #1a4a8c);
+    color: #e0e0e0;
+}
+
+/* Effet de neige */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 1em;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Cartes magiques */
+.magic-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.magic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Grille des rituels */
+.ritual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.ritual-card {
+    background: rgba(26, 74, 140, 0.3);
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.ritual-circle {
+    position: absolute;
+    bottom: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Créateur de sorts */
+.spell-creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.spell-ingredients {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ingredient {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.ingredient:hover {
+    transform: scale(1.1);
+}
+
+.spell-creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.spell-cauldron {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 50% 50%, #4a90e2, #2c3e50);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 80px; /* Plus d'espace pour le bouton */
+    border: 4px solid #1a4a8c;
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+}
+
+.cauldron-content {
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Bouton de mélange */
+.mix-button {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #7e2553, #ff4d4d);
+    min-width: 120px;
+    height: 45px;
+    z-index: 10;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Metamorphous', serif;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.5);
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.mix-button:enabled {
+    opacity: 1;
+    animation: pulse-glow 2s infinite;
+}
+
+.mix-button:enabled:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 77, 77, 0.8);
+}
+
+.mix-button .mix-icon {
+    margin-right: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+}
+
+.mix-button:disabled {
+    background: linear-gradient(45deg, #666, #999);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.mix-button:enabled {
+    animation: glow 2s infinite;
+}
+
+.mix-button:enabled:hover .mix-icon {
+    animation: wiggle 1s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px #ff4d4d,
+                    0 0 10px #ff4d4d,
+                    0 0 15px #7e2553;
+    }
+    50% {
+        box-shadow: 0 0 10px #ff4d4d,
+                    0 0 20px #ff4d4d,
+                    0 0 30px #7e2553;
+    }
+}
+
+.magic-result {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Effet de mélange magique */
+.mixing {
+    animation: mixing-effect 2s ease-in-out;
+}
+
+.magic-particle {
+    position: absolute;
+    pointer-events: none;
+    animation: float-away 1.5s ease-out forwards;
+}
+
+@keyframes mixing-effect {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.2) rotate(90deg); }
+    50% { transform: scale(1) rotate(180deg); }
+    75% { transform: scale(1.2) rotate(270deg); }
+    100% { transform: scale(1) rotate(360deg); }
+}
+
+@keyframes float-away {
+    0% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% { 
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 15px rgba(255, 77, 77, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(255, 77, 77, 0.8); }
+    100% { box-shadow: 0 0 15px rgba(255, 77, 77, 0.5); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    75% { transform: rotate(20deg); }
+}
+
+/* Animations flottantes */
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-symbol {
+    display: inline-block;
+    animation: float 4s ease-in-out infinite;
+    margin: 0 0.5rem;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Effets de particules magiques */
+.magic-sparkles {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.sparkle {
+    position: absolute;
+    background: #fff;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation: sparkle-fade 2s ease-in-out infinite;
+}
+
+@keyframes sparkle-fade {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+/* En-tête et pied de page spéciaux */
+.noel-header, .noel-footer {
+    background: rgba(10, 31, 59, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.header-symbols {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.header-seal {
+    width: 100px;
+    height: 100px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.magic-quote {
+    font-family: 'Metamorphous', serif;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 2rem 0;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
