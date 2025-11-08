@@ -1,0 +1,475 @@
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Almendra:ital,wght@0,400;0,700;1,400&family=Metamorphous&display=swap');
+
+/* Fix pour le défilement */
+html, body {
+    min-height: 100vh;
+    height: auto !important;
+    overflow-y: auto !important;
+}
+
+#root {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Variables globales */
+:root {
+    --primary-color: #0B0B2B;
+    --secondary-color: #1B1B4B;
+    --accent-color: #9D71E8;
+    --accent-color-bright: #B388FF;
+    --text-color: #E6E6FF;
+    --title-color: #FFD700;
+    --bg-color: #050510;
+    --shadow-color: rgba(157, 113, 232, 0.25);
+    --nebula-color-1: rgba(147, 51, 234, 0.15);
+    --nebula-color-2: rgba(76, 29, 149, 0.25);
+    --star-color: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset HTML et Body */
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style général */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Almendra', serif;
+    line-height: 1.6;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+    background-attachment: fixed;
+}
+
+/* Animation d'étoiles scintillantes */
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Création d'étoiles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(var(--star-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: twinkle 4s infinite alternate;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(var(--star-color) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: 25px 25px;
+    animation: twinkle 6s infinite alternate-reverse;
+}
+
+/* Header */
+.header {
+    background-color: rgba(11, 11, 43, 0.8);
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 
+        0 2px 15px var(--shadow-color),
+        0 0 50px var(--nebula-color-1);
+    position: relative;
+    background-image: 
+        linear-gradient(45deg, 
+            rgba(11, 11, 43, 0.9), 
+            rgba(27, 27, 75, 0.8)),
+        url('../images/cosmic-mandala.png');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--nebula-color-1),
+        var(--nebula-color-2),
+        transparent
+    );
+    opacity: 0.5;
+    animation: nebula-flow 15s ease-in-out infinite;
+}
+
+@keyframes nebula-flow {
+    0%, 100% {
+        transform: translateX(-20%);
+    }
+    50% {
+        transform: translateX(20%);
+    }
+}
+
+.header::before, .header::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+}
+
+.header::before {
+    left: 0;
+    background-image: url('../images/pillar-left.png');
+}
+
+.header::after {
+    right: 0;
+    background-image: url('../images/pillar-right.png');
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 4rem;
+    color: var(--title-color);
+    font-family: 'UnifrakturMaguntia', cursive;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 20px var(--shadow-color);
+    letter-spacing: 2px;
+}
+
+.header-subtitle {
+    font-family: 'Metamorphous', serif;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation */
+.nav {
+    background-color: rgba(44, 24, 16, 0.9);
+    padding: 1rem;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main content */
+.main-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background-color: rgba(11, 11, 43, 0.7);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 
+        0 4px 15px rgba(157, 113, 232, 0.2),
+        0 0 30px var(--nebula-color-1),
+        inset 0 0 20px var(--nebula-color-2);
+    transition: all 0.3s ease;
+    position: relative;
+    background-image: 
+        linear-gradient(
+            45deg,
+            rgba(11, 11, 43, 0.8),
+            rgba(27, 27, 75, 0.6)
+        ),
+        url('../images/constellation-pattern.png');
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(
+            circle at center,
+            var(--star-color) 1px,
+            transparent 1px
+        );
+    background-size: 50px 50px;
+    opacity: 0.1;
+    animation: rotate-stars 60s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate-stars {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--shadow-color);
+}
+
+.card h2 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: var(--title-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    font-family: 'Metamorphous', serif;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+/* Grille des livres */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.book-card {
+    background-color: rgba(44, 24, 16, 0.9);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-image: 
+        linear-gradient(rgba(44, 24, 16, 0.97), rgba(44, 24, 16, 0.97)),
+        url('../images/book-texture.png');
+}
+
+.book-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/seal-watermark.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.book-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--shadow-color);
+}
+
+.book-card img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.book-card h3 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: var(--title-color);
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.book-card p {
+    font-family: 'Almendra', serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.book-card .mystic-symbol {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    display: block;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--shadow-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 2px solid var(--accent-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Symboles mystiques */
+.mystic-symbol {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin: 0 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgba(44, 24, 16, 0.9);
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--text-color);
+}

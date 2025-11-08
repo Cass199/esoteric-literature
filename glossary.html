@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossaire Ésotérique - Bibliothèque Ésotérique</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Almendra:ital,wght@0,400;0,700;1,400&family=Metamorphous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+    <link rel="stylesheet" href="css/timeline-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-symbols">
+            <span class="mystic-symbol">📖</span>
+            <img src="images/key.png" alt="Clé mystique" class="header-seal">
+            <span class="mystic-symbol">🔍</span>
+        </div>
+        <h1>Glossaire Ésotérique</h1>
+        <p class="header-subtitle">Les Clés de la Connaissance Occulte</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="history.html">Histoire</a></li>
+            <li><a href="schools.html">Écoles</a></li>
+            <li><a href="artifacts.html">Artefacts</a></li>
+            <li><a href="glossary.html">Glossaire</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="card fade-in">
+            <h2>Lexique des Arts Occultes</h2>
+            <div class="quote-card">
+                "Les mots sont des clés qui ouvrent les portes de la compréhension."
+            </div>
+        </section>
+
+        <section class="glossary-section">
+            <div class="glossary-nav">
+                <div class="glossary-letter" data-letter="A">A</div>
+                <div class="glossary-letter" data-letter="B">B</div>
+                <div class="glossary-letter" data-letter="C">C</div>
+                <!-- Ajouter les autres lettres -->
+            </div>
+
+            <div class="glossary-content">
+                <article class="glossary-term fade-in-up" id="A">
+                    <h3 class="term-title">Alchimie</h3>
+                    <p>Art hermétique visant à la transformation de la matière et de l'esprit. L'alchimie comprend à la fois une dimension pratique (transmutation des métaux) et spirituelle (transformation intérieure).</p>
+                </article>
+
+                <article class="glossary-term fade-in-up">
+                    <h3 class="term-title">Arcane</h3>
+                    <p>Secret ou mystère profond, souvent lié aux vérités fondamentales de l'existence. Dans le Tarot, les Arcanes sont les cartes porteuses de symboles ésotériques.</p>
+                </article>
+
+                <article class="glossary-term fade-in-up" id="B">
+                    <h3 class="term-title">Baphomet</h3>
+                    <p>Figure symbolique de l'ésotérisme occidental, représentant l'union des opposés et la synthèse des forces cosmiques.</p>
+                </article>
+
+                <article class="glossary-term fade-in-up" id="C">
+                    <h3 class="term-title">Cabale</h3>
+                    <p>Tradition mystique juive explorant la nature de la divinité à travers l'étude des textes sacrés et la méditation sur les lettres hébraïques.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <h2>Index Thématique</h2>
+            <div class="school-grid">
+                <article class="school-card fade-in-up">
+                    <h3 class="school-title">Symboles & Sigils</h3>
+                    <ul>
+                        <li>Pentagramme</li>
+                        <li>Hexagramme</li>
+                        <li>Ouroboros</li>
+                        <li>Croix ansée</li>
+                    </ul>
+                </article>
+
+                <article class="school-card fade-in-up">
+                    <h3 class="school-title">Pratiques Rituelles</h3>
+                    <ul>
+                        <li>Évocation</li>
+                        <li>Invocation</li>
+                        <li>Théurgie</li>
+                        <li>Méditation</li>
+                    </ul>
+                </article>
+
+                <article class="school-card fade-in-up">
+                    <h3 class="school-title">Sciences Occultes</h3>
+                    <ul>
+                        <li>Astrologie</li>
+                        <li>Alchimie</li>
+                        <li>Géomancie</li>
+                        <li>Numérologie</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Bibliothèque Ésotérique - Tous droits réservés</p>
+        <div class="mystic-symbols">
+            <span class="mystic-symbol">☽</span>
+            <span class="mystic-symbol">☉</span>
+            <span class="mystic-symbol">☿</span>
+            <span class="mystic-symbol">♄</span>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation du glossaire
+        document.querySelectorAll('.glossary-letter').forEach(letter => {
+            letter.addEventListener('click', () => {
+                const targetLetter = letter.getAttribute('data-letter');
+                const targetElement = document.getElementById(targetLetter);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Animation au défilement
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

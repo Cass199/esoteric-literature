@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grimoires Anciens - Bibliothèque Ésotérique</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Almendra:ital,wght@0,400;0,700;1,400&family=Metamorphous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-symbols">
+            <span class="mystic-symbol">📖</span>
+            <img src="images/pentagram.png" alt="Pentagramme" class="header-seal">
+            <span class="mystic-symbol">🔮</span>
+        </div>
+        <h1>Grimoires & Manuscrits</h1>
+        <p class="header-subtitle">Archives Secrètes des Arts Occultes</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="categories.html">Catégories</a></li>
+            <li><a href="grimoires.html">Grimoires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="card fade-in">
+            <h2>Collection des Grimoires</h2>
+            <div class="quote-card">
+                "Dans ces pages anciennes repose la sagesse des âges, attendant d'être redécouverte par ceux qui sont dignes de ses secrets."
+            </div>
+        </section>
+
+        <section class="grimoire-section">
+            <div class="grimoire-grid">
+                <article class="grimoire-card scroll-reveal">
+                    <div class="grimoire-content">
+                        <h3 class="grimoire-title">Le Grand Grimoire</h3>
+                        <div class="manuscript-image-container">
+                            <img src="images/grand-grimoire.jpg" alt="Le Grand Grimoire" class="manuscript-image">
+                        </div>
+                        <p>Un des textes les plus énigmatiques de la tradition occulte occidentale, datant du XVIIIe siècle.</p>
+                        <div class="grimoire-tags">
+                            <span class="grimoire-tag">Magie Cérémonielle</span>
+                            <span class="grimoire-tag">Démonologie</span>
+                            <span class="grimoire-tag">XVIIIe siècle</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="grimoire-card scroll-reveal">
+                    <div class="grimoire-content">
+                        <h3 class="grimoire-title">Necronomicon</h3>
+                        <div class="manuscript-image-container">
+                            <img src="images/necronomicon.jpg" alt="Necronomicon" class="manuscript-image">
+                        </div>
+                        <p>Le légendaire grimoire fictif créé par H.P. Lovecraft, devenu une icône de la littérature occulte.</p>
+                        <div class="grimoire-tags">
+                            <span class="grimoire-tag">Mythologie</span>
+                            <span class="grimoire-tag">Fiction</span>
+                            <span class="grimoire-tag">XXe siècle</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="ritual-section fade-in">
+            <h2>Manuscrits Rares</h2>
+            <div class="manuscript-gallery">
+                <article class="manuscript-item">
+                    <img src="images/voynich.jpg" alt="Manuscrit de Voynich" class="manuscript-image">
+                    <div class="manuscript-overlay">
+                        <h3 class="manuscript-title">Manuscrit de Voynich</h3>
+                        <p class="manuscript-date">XVe siècle</p>
+                        <p>Un manuscrit mystérieux écrit dans une langue inconnue, rempli d'illustrations botaniques et astronomiques.</p>
+                    </div>
+                </article>
+
+                <article class="manuscript-item">
+                    <img src="images/sefer-raziel.jpg" alt="Sefer Raziel HaMalakh" class="manuscript-image">
+                    <div class="manuscript-overlay">
+                        <h3 class="manuscript-title">Sefer Raziel HaMalakh</h3>
+                        <p class="manuscript-date">XIIIe siècle</p>
+                        <p>Le Livre de Raziel l'Ange, un grimoire de magie juive attribué à l'archange Raziel.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <h2>Études & Transcriptions</h2>
+            <div class="ritual-steps">
+                <div class="ritual-step scroll-reveal">
+                    <h3>Analyse des Symboles</h3>
+                    <p>Découvrez les significations cachées derrière les symboles ancestraux et leur utilisation dans les rituels.</p>
+                </div>
+                <div class="ritual-step scroll-reveal">
+                    <h3>Traditions Orales</h3>
+                    <p>Exploration des connexions entre les textes écrits et les traditions orales transmises à travers les âges.</p>
+                </div>
+                <div class="ritual-step scroll-reveal">
+                    <h3>Restauration</h3>
+                    <p>Nos experts travaillent à la préservation et à la restauration de ces textes précieux pour les générations futures.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Bibliothèque Ésotérique - Tous droits réservés</p>
+        <div class="mystic-symbols">
+            <span class="mystic-symbol">☽</span>
+            <span class="mystic-symbol">☉</span>
+            <span class="mystic-symbol">☿</span>
+            <span class="mystic-symbol">♄</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

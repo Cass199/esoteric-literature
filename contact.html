@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque Ésotérique - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <span class="mystic-symbol">☽</span>
+        <h1>Contact des Initiés</h1>
+        <span class="mystic-symbol">☉</span>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="categories.html">Catégories</a></li>
+            <li><a href="auteurs.html">Auteurs</a></li>
+            <li><a href="grimoires.html">Grimoires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="card fade-in">
+            <h2>Contactez les Gardiens du Savoir</h2>
+            <p>Pour toute question sur nos manuscrits ou pour organiser une visite de notre bibliothèque, veuillez remplir le formulaire ci-dessous.</p>
+            
+            <form id="contactForm" class="contact-form" onsubmit="validateForm(event)">
+                <div class="form-group">
+                    <label for="name">Nom de l'Initié</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Mystique</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Sujet de la Quête</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Choisissez un sujet...</option>
+                        <option value="consultation">Consultation d'ouvrages</option>
+                        <option value="recherche">Recherche spécifique</option>
+                        <option value="visite">Visite de la bibliothèque</option>
+                        <option value="autre">Autre requête</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Envoyer le message</button>
+            </form>
+        </section>
+
+        <section class="card fade-in">
+            <h2>Localisation du Sanctuaire</h2>
+            <p>Notre bibliothèque est située dans un lieu secret, accessible uniquement aux initiés. Les coordonnées exactes vous seront communiquées après validation de votre requête.</p>
+            <div class="mystic-symbols">
+                <span class="mystic-symbol">♄</span>
+                <span class="mystic-symbol">☿</span>
+                <span class="mystic-symbol">♃</span>
+                <span class="mystic-symbol">♂</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Bibliothèque Ésotérique - Tous droits réservés</p>
+        <div>
+            <span class="mystic-symbol">☽</span>
+            <span class="mystic-symbol">☉</span>
+            <span class="mystic-symbol">☿</span>
+            <span class="mystic-symbol">♄</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

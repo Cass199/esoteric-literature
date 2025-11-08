@@ -1,0 +1,223 @@
+/* Styles pour les ornements et symboles */
+.header-symbols {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.header-seal {
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+    animation: rotate 20s linear infinite;
+}
+
+.header-ornament {
+    margin-top: 1rem;
+}
+
+.ornament-img {
+    max-width: 300px;
+    opacity: 0.6;
+}
+
+/* Animation rotative */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Style personnalisé pour les symboles mystiques */
+.mystic-symbol {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--shadow-color);
+}
+
+/* Style pour les citations */
+.quote-card {
+    font-family: 'Almendra', serif;
+    font-style: italic;
+    padding: 2rem;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.quote-card::before,
+.quote-card::after {
+    content: '"';
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 4rem;
+    color: var(--accent-color);
+    position: absolute;
+    opacity: 0.5;
+}
+
+.quote-card::before {
+    top: -10px;
+    left: 10px;
+}
+
+.quote-card::after {
+    bottom: -30px;
+    right: 10px;
+}
+
+/* Style pour les images de livre */
+.book-image-container {
+    position: relative;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.book-image {
+    max-width: 250px;
+    border: 3px solid var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 0 20px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+/* Style pour la galerie des manuscrits */
+.manuscript-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.manuscript-item {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.manuscript-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.manuscript-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(26, 15, 15, 0.1),
+        rgba(26, 15, 15, 0.9)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.manuscript-item:hover .manuscript-overlay {
+    transform: translateY(0);
+}
+
+.manuscript-item:hover .manuscript-image {
+    transform: scale(1.1);
+}
+
+.manuscript-title {
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: var(--title-color);
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.manuscript-date {
+    font-family: 'Metamorphous', serif;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.book-image:hover {
+    transform: scale(1.05);
+}
+
+/* Style pour les sections spéciales */
+.featured-section {
+    position: relative;
+    padding: 3rem;
+    margin: 3rem 0;
+    background-image: 
+        linear-gradient(rgba(44, 24, 16, 0.95), rgba(44, 24, 16, 0.95)),
+        url('../images/manuscript-bg.png');
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.featured-section::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid rgba(201, 162, 39, 0.3);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+/* Style pour la navigation */
+.nav {
+    background-color: rgba(26, 15, 15, 0.95);
+    border-bottom: 1px solid var(--accent-color);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Metamorphous', serif;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire de l'Ésotérisme - Bibliothèque Ésotérique</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Almendra:ital,wght@0,400;0,700;1,400&family=Metamorphous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+    <link rel="stylesheet" href="css/timeline-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-symbols">
+            <span class="mystic-symbol">⌛</span>
+            <img src="images/ouroboros.png" alt="Ouroboros" class="header-seal">
+            <span class="mystic-symbol">🌟</span>
+        </div>
+        <h1>Histoire de l'Ésotérisme</h1>
+        <p class="header-subtitle">Du Savoir Ancien à la Sagesse Éternelle</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="history.html">Histoire</a></li>
+            <li><a href="schools.html">Écoles</a></li>
+            <li><a href="artifacts.html">Artefacts</a></li>
+            <li><a href="glossary.html">Glossaire</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="card fade-in">
+            <h2>Chronologie des Traditions Ésotériques</h2>
+            <div class="quote-card">
+                "L'histoire de l'ésotérisme est aussi ancienne que la quête de l'humanité pour la connaissance divine."
+            </div>
+        </section>
+
+        <section class="timeline">
+            <article class="timeline-item fade-in-up">
+                <div class="timeline-date">3000 av. J.-C.</div>
+                <div class="timeline-content">
+                    <h3>Égypte Antique</h3>
+                    <p>Naissance des mystères hermétiques et des rituels initiatiques dans les temples égyptiens.</p>
+                </div>
+            </article>
+
+            <article class="timeline-item fade-in-up">
+                <div class="timeline-date">600 av. J.-C.</div>
+                <div class="timeline-content">
+                    <h3>École Pythagoricienne</h3>
+                    <p>Fondation de l'école mystique de Pythagore, unissant mathématiques et spiritualité.</p>
+                </div>
+            </article>
+
+            <article class="timeline-item fade-in-up">
+                <div class="timeline-date">100-300 apr. J.-C.</div>
+                <div class="timeline-content">
+                    <h3>Gnosticisme</h3>
+                    <p>Émergence des traditions gnostiques et des textes de Nag Hammadi.</p>
+                </div>
+            </article>
+
+            <article class="timeline-item fade-in-up">
+                <div class="timeline-date">Moyen Âge</div>
+                <div class="timeline-content">
+                    <h3>Alchimie Médiévale</h3>
+                    <p>Développement de l'alchimie et des traditions hermétiques en Europe.</p>
+                </div>
+            </article>
+
+            <article class="timeline-item fade-in-up">
+                <div class="timeline-date">Renaissance</div>
+                <div class="timeline-content">
+                    <h3>Résurgence Hermétique</h3>
+                    <p>Redécouverte des textes anciens et formation des sociétés secrètes.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="featured-section">
+            <h2>Centres Historiques de l'Ésotérisme</h2>
+            <div class="interactive-map">
+                <!-- Points interactifs sur la carte -->
+                <div class="map-point" style="top: 30%; left: 45%;">
+                    <div class="map-tooltip">
+                        <h4>Alexandrie</h4>
+                        <p>Centre des études hermétiques et gnostiques</p>
+                    </div>
+                </div>
+                <div class="map-point" style="top: 40%; left: 55%;">
+                    <div class="map-tooltip">
+                        <h4>Constantinople</h4>
+                        <p>Carrefour des traditions mystiques</p>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres points selon les coordonnées -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Bibliothèque Ésotérique - Tous droits réservés</p>
+        <div class="mystic-symbols">
+            <span class="mystic-symbol">☽</span>
+            <span class="mystic-symbol">☉</span>
+            <span class="mystic-symbol">☿</span>
+            <span class="mystic-symbol">♄</span>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
